@@ -1,0 +1,154 @@
+.webview-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.webview-iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.offline-banner {
+  background-color: #ff6b6b;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.offline-banner p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Prevent iframe from reloading on orientation change */
+.webview-iframe {
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+
+/* Loading state */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--ion-color-light);
+}
+
+/* Smooth transitions */
+.webview-container * {
+  transition: all 0.3s ease;
+}
+
+/* Performance optimizations */
+.webview-iframe {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Native platform content */
+.native-content,
+.cors-error-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.native-header,
+.error-header {
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.native-header ion-icon,
+.error-header ion-icon {
+  margin-bottom: 1rem;
+}
+
+.native-header h2,
+.error-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.native-header p,
+.error-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  color: white;
+}
+
+.native-buttons,
+.error-buttons {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.primary-button {
+  --background: #ffffff;
+  --color: #667eea;
+  font-weight: 600;
+}
+
+.secondary-button {
+  --border-color: #ffffff;
+  --color: #ffffff;
+  font-weight: 500;
+}
+
+/* Error content styling */
+.cors-error-content {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.cors-error-content .error-buttons ion-button {
+  --background: #ffffff;
+  --color: #ff6b6b;
+}
+
+.cors-error-content .error-buttons ion-button[fill="outline"] {
+  --border-color: #ffffff;
+  --color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .native-content,
+  .cors-error-content {
+    padding: 1rem;
+  }
+  
+  .native-header h2,
+  .error-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .native-header p,
+  .error-header p {
+    font-size: 1rem;
+  }
+}
