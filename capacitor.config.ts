@@ -9,35 +9,25 @@ const config: CapacitorConfig = {
   },
   plugins: {
     SplashScreen: {
-      launchShowDuration: 2000,
+      launchShowDuration: 1500,
       launchAutoHide: true,
-      launchFadeOutDuration: 500,
+      launchFadeOutDuration: 300,
       backgroundColor: "#ffffff",
       androidSplashResourceName: "splash",
       androidScaleType: "CENTER_CROP",
-      showSpinner: true,
-      androidSpinnerStyle: "large",
-      iosSpinnerStyle: "small",
-      spinnerColor: "#999999",
-      splashFullScreen: true,
-      splashImmersive: true,
-      layoutName: "launch_screen",
-      useDialog: true,
+      showSpinner: false,
+      splashFullScreen: false,
+      splashImmersive: false
     },
     PushNotifications: {
-      presentationOptions: ["badge", "sound", "alert"],
-    },
-    App: {
-      launchUrl: "https://eduquencher.com"
-    },
-    Browser: {
-      url: "https://eduquencher.com"
+      presentationOptions: ["badge", "sound", "alert"]
     }
   },
   android: {
     allowMixedContent: true,
     captureInput: true,
-    webContentsDebuggingEnabled: false
+    webContentsDebuggingEnabled: true,
+    minWebViewVersion: 60
   },
   ios: {
     contentInset: 'automatic',

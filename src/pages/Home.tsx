@@ -1,11 +1,11 @@
 import { IonPage } from '@ionic/react';
-import EduQuencherHome from '../components/EduQuencherHome';
+import SimpleHome from '../components/SimpleHome';
 import './Home.css';
 
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <EduQuencherHome url="https://eduquencher.net" />
+      <SimpleHome url="https://eduquencher.net" />
     </IonPage>
   );
 };

@@ -1,0 +1,82 @@
+/* Simple, crash-free styling */
+.hero-section-simple {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 0 0 20px 20px;
+  margin: -16px -16px 2rem -16px;
+}
+
+.hero-icon-simple {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-section-simple h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.hero-section-simple p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.actions-section {
+  padding: 1rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.primary-button-simple {
+  --background: #667eea;
+  --color: white;
+  font-weight: 600;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.secondary-button-simple {
+  --border-color: #667eea;
+  --color: #667eea;
+  font-weight: 500;
+  height: 45px;
+  border-radius: 8px;
+}
+
+.info-card-simple {
+  margin: 1rem 0;
+  border-radius: 12px;
+}
+
+.info-card-simple ion-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.info-card-simple p {
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-section-simple {
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  
+  .hero-section-simple h1 {
+    font-size: 1.5rem;
+  }
+  
+  .actions-section {
+    padding: 0.5rem 0 1rem 0;
+  }
+}

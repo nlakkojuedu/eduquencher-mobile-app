@@ -2,10 +2,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { useEffect } from 'react';
-import { SplashScreen } from '@capacitor/splash-screen';
-import { StatusBar, Style } from '@capacitor/status-bar';
 import { Capacitor } from '@capacitor/core';
-import { PushNotificationService } from './services/PushNotificationService';
 import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
@@ -43,24 +40,15 @@ setupIonicReact();
 const App: React.FC = () => {
   useEffect(() => {
     const initializeApp = async () => {
-      if (Capacitor.isNativePlatform()) {
-        // Configure status bar
-        await StatusBar.setBackgroundColor({ color: '#ffffff' });
-        await StatusBar.setStyle({ style: Style.Dark });
-        
-        // Initialize push notifications
-        const pushService = new PushNotificationService();
-        try {
-          await pushService.initialize();
-          console.log('Push notifications initialized');
-        } catch (error) {
-          console.error('Push notification setup failed:', error);
+      try {
+        if (Capacitor.isNativePlatform()) {
+          console.log('Native platform detected');
+          // Basic initialization without complex plugins
+        } else {
+          console.log('Web platform detected');
         }
-        
-        // Hide splash screen after app loads
-        setTimeout(async () => {
-          await SplashScreen.hide();
-        }, 2000);
+      } catch (error) {
+        console.error('App initialization error:', error);
       }
     };
 
